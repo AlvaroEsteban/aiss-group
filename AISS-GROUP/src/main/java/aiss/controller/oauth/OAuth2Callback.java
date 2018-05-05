@@ -27,11 +27,6 @@ public class OAuth2Callback extends AbstractAuthorizationCodeCallbackServlet {
 	@Override
 	protected void onSuccess(HttpServletRequest req, HttpServletResponse resp, Credential credential)
 			throws ServletException, IOException {
-		
-		
-		
-		
-//		goñasidfhañsdiojf;
 		String provider=getInitParameter("provider");
 		req.getSession().setAttribute(provider+"-token", credential.getAccessToken());
 		OAuthRegistry.onAuthorizationSuccess(getInitParameter("onSuccess"), provider, credential, req, resp);				
