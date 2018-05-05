@@ -24,16 +24,8 @@
 	</fieldset>
 	
 	<div>
-	Artículos: ${requestScope.articles}
-	
+	Artículos: ${requestScope.articles}	
 	</div>
-	
-	
-	
-	
-	
-	
-	
-	
+
 </body>
 </html>
