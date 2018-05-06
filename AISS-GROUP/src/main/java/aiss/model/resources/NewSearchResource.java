@@ -8,9 +8,6 @@ import org.restlet.resource.ClientResource;
 import aiss.model.ign.NewSearch;
 
 public class NewSearchResource {
-	
-	
-	//private String uri = "http://localhost:8095/api/lists";
 
 	private static final String IGN_API_KEY = "96d1393e32da4fc496725ad1f0805d54";
 	private static final Logger log = Logger.getLogger(NewSearchResource.class.getName());
