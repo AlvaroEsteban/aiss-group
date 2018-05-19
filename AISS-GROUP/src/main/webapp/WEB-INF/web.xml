@@ -9,7 +9,7 @@
   </error-page>
   <servlet>
     <servlet-name>NewSearchController</servlet-name>
-    <servlet-class>aiss.controller.ign.NewSearchController</servlet-class>
+    <servlet-class>gamelive.controller.ign.NewSearchController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>NewSearchController</servlet-name>
@@ -19,7 +19,7 @@
     <description></description>
     <display-name>TwitchSearchController</display-name>
     <servlet-name>TwitchSearchController</servlet-name>
-    <servlet-class>aiss.controller.twitch.TwitchSearchController</servlet-class>
+    <servlet-class>gamelive.controller.twitch.TwitchSearchController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>TwitchSearchController</servlet-name>
@@ -29,7 +29,7 @@
     <description></description>
     <display-name>TwitchStreamController</display-name>
     <servlet-name>TwitchStreamController</servlet-name>
-    <servlet-class>aiss.controller.twitch.TwitchStreamController</servlet-class>
+    <servlet-class>gamelive.controller.twitch.TwitchStreamController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>TwitchStreamController</servlet-name>
@@ -39,7 +39,7 @@
     <description></description>
     <display-name>GiantbombController</display-name>
     <servlet-name>GiantbombController</servlet-name>
-    <servlet-class>aiss.controller.giantbomb.GiantbombController</servlet-class>
+    <servlet-class>gamelive.controller.giantbomb.GiantbombController</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>GiantbombController</servlet-name>
@@ -52,7 +52,7 @@
 		<servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
 		<init-param>
 			<param-name>javax.ws.rs.Application</param-name>
-			<param-value>aiss.api.MusicApplication</param-value>
+			<param-value>gamelive.api.GameLiveApplication</param-value>
 		</init-param>
 	</servlet>		
 	<servlet-mapping>
