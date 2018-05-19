@@ -1,5 +1,5 @@
 
-package aiss.model.giantbomb;
+package gamelive.model.giantbomb;
 
 import java.util.HashMap;
 import java.util.List;

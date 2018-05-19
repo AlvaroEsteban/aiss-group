@@ -1,5 +1,5 @@
 
-package aiss.model.ign;
+package gamelive.model.ign;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package aiss.controller.twitch;
+package gamelive.controller.twitch;
 
 import java.io.IOException;
 

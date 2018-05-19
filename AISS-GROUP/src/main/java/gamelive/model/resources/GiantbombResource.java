@@ -1,11 +1,11 @@
-package aiss.model.resources;
+package gamelive.model.resources;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.restlet.resource.ClientResource;
 
-import aiss.model.giantbomb.Games;
+import gamelive.model.giantbomb.Games;
 
 public class GiantbombResource {
 	private static final String IGN_API_KEY = "96760692f38e4e2500b287013d18a046119bb693";

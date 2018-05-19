@@ -1,11 +1,11 @@
-package aiss.model.resources;
+package gamelive.model.resources;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.restlet.resource.ClientResource;
 
-import aiss.model.ign.NewSearch;
+import gamelive.model.ign.NewSearch;
 
 public class NewSearchResource {
 

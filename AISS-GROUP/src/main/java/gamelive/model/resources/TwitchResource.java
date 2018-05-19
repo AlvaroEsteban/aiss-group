@@ -1,4 +1,4 @@
-package aiss.model.resources;
+package gamelive.model.resources;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -7,7 +7,7 @@ import org.restlet.data.Form;
 import org.restlet.resource.ClientResource;
 import org.restlet.resource.ResourceException;
 
-import aiss.model.twitch.StreamSearch;
+import gamelive.model.twitch.StreamSearch;
 
 
 

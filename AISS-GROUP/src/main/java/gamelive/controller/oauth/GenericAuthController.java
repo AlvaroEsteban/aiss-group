@@ -1,4 +1,4 @@
-package aiss.controller.oauth;
+package gamelive.controller.oauth;
 
 import java.io.IOException;
 import java.util.UUID;
@@ -12,7 +12,7 @@ import com.google.api.client.auth.oauth2.AuthorizationCodeFlow;
 import com.google.api.client.extensions.servlet.auth.oauth2.AbstractAuthorizationCodeServlet;
 import com.google.api.client.http.GenericUrl;
 
-import aiss.utility.OAuthRegistry;
+import gamelive.utility.OAuthRegistry;
 
 /**
  * Generic OAuth controller that initiates an OAuth 2.0 authorization flow.

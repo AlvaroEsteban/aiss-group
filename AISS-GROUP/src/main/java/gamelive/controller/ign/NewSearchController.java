@@ -1,4 +1,4 @@
-package aiss.controller.ign;
+package gamelive.controller.ign;
 
 import java.io.IOException;
 import java.util.logging.Level;
@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import aiss.model.ign.NewSearch;
-import aiss.model.resources.NewSearchResource;
+import gamelive.model.ign.NewSearch;
+import gamelive.model.resources.NewSearchResource;
 
 public class NewSearchController extends HttpServlet {
 	

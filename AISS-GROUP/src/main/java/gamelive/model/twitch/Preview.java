@@ -1,5 +1,5 @@
 
-package aiss.model.twitch;
+package gamelive.model.twitch;
 
 import java.util.HashMap;
 import java.util.Map;

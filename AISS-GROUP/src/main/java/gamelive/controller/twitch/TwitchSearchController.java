@@ -1,4 +1,4 @@
-package aiss.controller.twitch;
+package gamelive.controller.twitch;
 
 import java.io.IOException;
 
@@ -8,9 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-import aiss.model.resources.TwitchResource;
-import aiss.model.twitch.StreamSearch;
+import gamelive.model.resources.TwitchResource;
+import gamelive.model.twitch.StreamSearch;
 
 
 /**
