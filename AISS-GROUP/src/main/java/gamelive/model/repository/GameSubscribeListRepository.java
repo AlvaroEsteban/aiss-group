@@ -3,23 +3,24 @@ package gamelive.model.repository;
 import java.util.Collection;
 
 import gamelive.api.model.Game;
+import gamelive.api.model.GameSubscribeList;
 
 public interface GameSubscribeListRepository {
 	// Game
-	public void addSong(Game s);
-	public Collection<Game> getAllSongs();
-	public Game getSong(String songId);
-	public void updateSong(Game s);
-	public void deleteSong(String songId);
+	public void addGame(Game s);
+	public Collection<Game> getAllGames();
+	public Game getGame(String gameId);
+	public void updateGame(Game s);
+	public void deleteGame(String gameId);
 	
 //	// GameSubscribeList
-//	public void addPlaylist(Playlist p);
-//	public Collection<Playlist> getAllPlaylists();
-//	public Playlist getPlaylist(String playlistId);
-//	public void updatePlaylist(Playlist p);
-//	public void deletePlaylist(String playlistId);
-//	public Collection<Game> getAll(String playlistId);
-//	public void addSong(String playlistId, String songId);
-//	public void removeSong(String playlistId, String songId); 
+	public void addGameSubscribeList(GameSubscribeList p);
+	public Collection<GameSubscribeList> getAllGameSubscribeList();
+	public GameSubscribeList getGameSubscribeList(String gameSubscribeListId);
+	public void updateGameSubscribeList(GameSubscribeList p);
+	public void deleteGameSubscribeList(String gameSubscribeListId);
+	public Collection<Game> getAll(String gameSubscribeListId);
+	public void addGame(String gameSubscribeListId, String gameId);
+	public void removeGame(String gameSubscribeListId, String gameId); 
 
 }
