@@ -10,6 +10,12 @@ public class Game {
 	
 	public Game() {
 		super();
+		
+		
+		
+		
+		
+		
 	}
 	
 	public Game(String id, String titulo, String compania, String plataforma, String idioma) {
