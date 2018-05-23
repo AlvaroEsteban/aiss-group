@@ -18,7 +18,8 @@ public class GiantBombSearchResource {
 	public Games getGamesByName(String name) {
 
 		
-		String uri = "https://www.giantbomb.com/api/search/?api_key="+ IGN_API_KEY + "&query=" + name  +  "&limit=" + resultsNumber +"&format=" + RESPONSE_DATA_FORMAT;
+		String uri = "https://www.giantbomb.com/api/search/?api_key="+ IGN_API_KEY + "&query=" + name  +  "&limit=" + resultsNumber +"&format=" + RESPONSE_DATA_FORMAT 
+				+ "&resources=game";
 		
 		log.log(Level.FINE, "IGN URI: " + uri);
 		

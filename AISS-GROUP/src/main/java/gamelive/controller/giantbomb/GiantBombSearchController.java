@@ -40,6 +40,7 @@ public class GiantBombSearchController extends HttpServlet{
 		
 		if(games!= null) {
 			rd = request.getRequestDispatcher("/searchVideogameView.jsp");
+			log.log(Level.FINE, "Juego 1: "+games.getResults().get(0).getName());
 			request.setAttribute("games", games.getResults() );
 		} else {
 			log.log(Level.SEVERE, "Giantbomb no devolvió ningún resultado");
