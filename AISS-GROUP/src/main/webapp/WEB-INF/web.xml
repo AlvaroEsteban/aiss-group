@@ -55,18 +55,26 @@
     <servlet-name>GiantBombSearchController</servlet-name>
     <url-pattern>/searchGame</url-pattern>
   </servlet-mapping>
-  
-  <!-- RestEasy para implementar nuestras APIS -->
-  	<servlet>
-		<servlet-name>Resteasy</servlet-name>
-		<servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
-		<init-param>
-			<param-name>javax.ws.rs.Application</param-name>
-			<param-value>gamelive.api.GameLiveApplication</param-value>
-		</init-param>
-	</servlet>		
-	<servlet-mapping>
-		<servlet-name>Resteasy</servlet-name>
-		<url-pattern>/api/*</url-pattern>
-	</servlet-mapping>
+  <servlet>
+    <servlet-name>Resteasy</servlet-name>
+    <servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
+    <init-param>
+      <param-name>javax.ws.rs.Application</param-name>
+      <param-value>gamelive.api.GameLiveApplication</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Resteasy</servlet-name>
+    <url-pattern>/api/*</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GiantBombGameController</display-name>
+    <servlet-name>GiantBombGameController</servlet-name>
+    <servlet-class>gamelive.controller.giantbomb.GiantBombGameController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GiantBombGameController</servlet-name>
+    <url-pattern>/GiantBombGameController</url-pattern>
+  </servlet-mapping>
 </web-app>
