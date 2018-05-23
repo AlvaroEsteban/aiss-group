@@ -12,11 +12,8 @@
 		<legend>Resultados de <c:out value = "${requestScope.game}"/></legend>
 		
 		ay lmao
-		<c:forEach items = "${requestScope.streamlist}" var = "stream">
-		<form action ="GiantBombSearchController" method = "get">
-		<!-- <img src = <c:out value = "${stream.channel.logo}"/> a >-->
+		<c:forEach items = "${requestScope.games}" var = "stream">
 		
-		</form>
 	
 		</c:forEach>
 	</fieldset>
