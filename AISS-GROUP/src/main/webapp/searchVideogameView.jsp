@@ -12,10 +12,13 @@
 		<legend>Resultados de <c:out value = "${requestScope.game}"/></legend>
 		
 		ay lmao
-		<c:forEach items = "${requestScope.games}" var = "stream">
-		
-	
+		<c:forEach items="${requestScope.games}" var="game">
+			<span> Nombre del videojuego: <c:out value="${game.name}"/> </span><br/>
+			<span> GUID del videjuego:  <c:out value="${game.guid}"/> </span><br/>
+			<span> Descripción del videojuego:  <c:out value="${game.description}"/> </span><br/>
+			<br/>
 		</c:forEach>
+		
 	</fieldset>
 	
 	
