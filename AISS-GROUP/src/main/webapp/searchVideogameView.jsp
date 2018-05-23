@@ -18,6 +18,11 @@
 			<input type="hidden" value="${game.apiDetailUrl}" id="enlace"/>
 			<a href="">Pincha aquí huevo</a>
 			
+			Mío
+			<form action = "GiantBombGameController" method = "get">
+				<input type = "hidden" value = "${game.guid}" title = "gameguid">
+			</form>
+			<a href="http://localhost:8090/gameView.jsp">Enlace del videojuego</a>
 			</div>
 			<br/>
 		</c:forEach>

@@ -5,6 +5,7 @@ import java.util.logging.Logger;
 
 import org.restlet.resource.ClientResource;
 
+import gamelive.api.model.Game;
 import gamelive.model.giantbomb.Result;
 
 public class GiantBombGameResource {
@@ -20,9 +21,9 @@ public class GiantBombGameResource {
 		
 		
 		ClientResource cr = new ClientResource(uri);
-		Result r = cr.get(Result.class);
+		Result ga = cr.get(Result.class);
 		
-		return r;
+		return ga;
 	}
 	
 }
