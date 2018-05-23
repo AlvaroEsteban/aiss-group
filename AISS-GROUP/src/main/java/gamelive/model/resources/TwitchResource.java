@@ -12,8 +12,8 @@ import gamelive.model.twitch.StreamSearch;
 
 
 public class TwitchResource {
-	private  String client_id = "pbfpd1osbjx3ytibh3gloui8f5lnhd";
-	private String uri = "https://api.twitch.tv/kraken/streams/";
+	private String client_id = "pbfpd1osbjx3ytibh3gloui8f5lnhd";
+	
 	
 		/*public StreamSearch getAllStreams() {
 			ClientResource cr = null;
@@ -28,15 +28,16 @@ public class TwitchResource {
 		}*/
 		public StreamSearch getStreamsByGame(String game) throws UnsupportedEncodingException {
 			ClientResource cr = null;
+			String uri = "https://api.twitch.tv/kraken/search/streams?query=";
 			String gameEncoded = URLEncoder.encode(game, "UTF-8");
 			StreamSearch streams = null;
-			//try {
+			try {
 				cr = new ClientResource(uri + "?game=" + gameEncoded + "&client_id=" + client_id);
 				
 				streams = cr.get(StreamSearch.class);
-			//} catch (ResourceException re) {
-			//	System.err.println("Error al consultar los directos: " + cr.getResponse().getStatus());
-			//}
+			} catch (ResourceException re) {
+				System.err.println("Error al consultar los directos: " + cr.getResponse().getStatus());
+			}
 			return streams; 
 		}
 	}
