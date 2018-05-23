@@ -20,7 +20,7 @@
 			
 			Mío
 			<form action = "GiantBombGameController" method = "get">
-				<input type = "hidden" value = "${game.guid}" title = "gameguid">
+				<input type = "hidden" value = "${game.guid}" name="guid">
 			</form>
 			<a href="http://localhost:8090/gameView.jsp">Enlace del videojuego</a>
 			</div>

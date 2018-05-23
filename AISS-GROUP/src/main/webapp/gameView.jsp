@@ -13,7 +13,7 @@
 		ay lmao2
 		<c:forEach items="${requestScope.result}" var="at">
 			<span> Nombre del videojuego: <c:out value="${at.deck}"/> </span><br/>
-			<span> GUID del videjuego:  <c:out value="${game.guid}"/> </span><br/>
+			<span> GUID del videjuego:  <c:out value="${at.guid}"/> </span><br/>
 			<span> Descripción del videojuego:  </span>
 			
 			
