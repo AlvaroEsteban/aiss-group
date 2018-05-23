@@ -45,6 +45,16 @@
     <servlet-name>GiantbombController</servlet-name>
     <url-pattern>/games</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GiantBombSearchController</display-name>
+    <servlet-name>GiantBombSearchController</servlet-name>
+    <servlet-class>gamelive.controller.giantbomb.GiantBombSearchController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GiantBombSearchController</servlet-name>
+    <url-pattern>/searchGame</url-pattern>
+  </servlet-mapping>
   
   <!-- RestEasy para implementar nuestras APIS -->
   	<servlet>
