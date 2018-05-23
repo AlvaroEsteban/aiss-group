@@ -15,6 +15,7 @@
 		<!-- <img src = <c:out value = "${stream.channel.logo}"/> a >-->
 		<input type="image" src="<c:out value = "${stream.channel.logo}"/>" alt="Submit Form"/>
 		<input type = "hidden" name ="channel" value = <c:out value = "${stream.channel.name}"/>/>
+		<input type = "hidden" name ="logo" value = <c:out value = "${stream.channel.logo}"/>"/>
 		</form>
 		<p>Nombre del canal: <c:out value = "${stream.channel.name}"/></p>
 		</c:forEach>
