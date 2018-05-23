@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix= "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,16 +10,18 @@
 <body>
 	
 	<fieldset id = "giantGames">
-		<legend>Resultados de <c:out value = "${requestScope.game}"/></legend>
-		
 		ay lmao
-		<c:forEach items = "${requestScope.streamlist}" var = "stream">
-		<form action ="GiantBombSearchController" method = "get">
-		<!-- <img src = <c:out value = "${stream.channel.logo}"/> a >-->
-		
-		</form>
-	
+		<c:forEach items="${requestScope.games}" var="game">
+			<span> Nombre del videojuego: <c:out value="${game.name}"/> </span><br/>
+			<span> GUID del videjuego:  <c:out value="${game.guid}"/> </span><br/>
+			<span> Descripción del videojuego:  </span>
+			<input type="hidden" value="${game.apiDetailUrl}" id="enlace"/>
+			<a href="">Pincha aquí huevo</a>
+			
+			</div>
+			<br/>
 		</c:forEach>
+		
 	</fieldset>
 	
 	

@@ -36,7 +36,7 @@ public class GiantbombController extends HttpServlet {
 		
 		RequestDispatcher rd = null;
 		
-		log.log(Level.FINE, "Buscando noticias en IGN");
+		log.log(Level.FINE, "Buscando noticias en Giantbomb");
 		GiantbombResource  gbr = new GiantbombResource();
 		Games games = gbr.getGames();
 		

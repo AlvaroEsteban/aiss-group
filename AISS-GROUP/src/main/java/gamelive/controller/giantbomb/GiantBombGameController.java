@@ -11,36 +11,37 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import gamelive.model.giantbomb.Games;
-import gamelive.model.resources.GiantBombSearchResource;
+import gamelive.model.resources.GiantbombResource;
 
-public class GiantBombSearchController extends HttpServlet{
-	
+/**
+ * Servlet implementation class GiantBombGameController
+ */
+public class GiantBombGameController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static final Logger log = Logger.getLogger(GiantBombSearchController.class.getName());
+    private static final Logger log = Logger.getLogger(GiantBombGameController.class.getName());
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public GiantBombSearchController() {
+    public GiantBombGameController() {
         super();
+        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		
+		// TODO Auto-generated method stub
 		RequestDispatcher rd = null;
 		
-		log.log(Level.FINE, "Buscando juegos en GiantBomb");
-		GiantBombSearchResource  gbr = new GiantBombSearchResource();
-		Games games = gbr.getGamesByName(request.getParameter("name"));
+		log.log(Level.FINE, "Buscando tu juego en GiantBomb");
+		GiantbombResource  gbr = new GiantbombResource();
+		Games games = gbr.getGames();
 		
 		
 		
 		if(games!= null) {
-			rd = request.getRequestDispatcher("/searchVideogameView.jsp");
-			log.log(Level.FINE, "Juego 1: "+games.getResults().get(0).getName());
+			rd = request.getRequestDispatcher("/allGames.jsp");
 			request.setAttribute("games", games.getResults() );
 		} else {
 			log.log(Level.SEVERE, "Giantbomb no devolvió ningún resultado");
@@ -53,8 +54,8 @@ public class GiantBombSearchController extends HttpServlet{
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
-	
 }
