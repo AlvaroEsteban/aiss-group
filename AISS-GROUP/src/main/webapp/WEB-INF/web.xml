@@ -45,43 +45,36 @@
     <servlet-name>GiantbombController</servlet-name>
     <url-pattern>/games</url-pattern>
   </servlet-mapping>
-   <servlet>
-    <servlet-name>TwitchAuthController</servlet-name>
-    <servlet-class>gamelive.controller.oauth.GenericAuthController</servlet-class>
-    <init-param>
-    	<param-name>provider</param-name><param-value>Twitch</param-value>
-    </init-param>
+  <servlet>
+    <description></description>
+    <display-name>GiantBombSearchController</display-name>
+    <servlet-name>GiantBombSearchController</servlet-name>
+    <servlet-class>gamelive.controller.giantbomb.GiantBombSearchController</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>TwitchAuthController</servlet-name>
-    <url-pattern>/AuthController/Twitch</url-pattern>
+    <servlet-name>GiantBombSearchController</servlet-name>
+    <url-pattern>/searchGame</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>TwitchOAuth2Callback</servlet-name>
-    <servlet-class>gamelive.controller.oauth.OAuth2Callback</servlet-class>
-       <init-param>
-    	<param-name>provider</param-name><param-value>Twitch</param-value>
-    </init-param>
+    <servlet-name>Resteasy</servlet-name>
+    <servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
     <init-param>
-    	<param-name>onSuccess</param-name><param-value>redirect/followList</param-value>
+      <param-name>javax.ws.rs.Application</param-name>
+      <param-value>gamelive.api.GameLiveApplication</param-value>
     </init-param>
   </servlet>
   <servlet-mapping>
-    <servlet-name>TwitchOAuth2Callback</servlet-name>
-    <url-pattern>/oauth2callback/Twitch</url-pattern>
+    <servlet-name>Resteasy</servlet-name>
+    <url-pattern>/api/*</url-pattern>
   </servlet-mapping>
-  
-  <!-- RestEasy para implementar nuestras APIS -->
-  	<servlet>
-		<servlet-name>Resteasy</servlet-name>
-		<servlet-class>org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher</servlet-class>
-		<init-param>
-			<param-name>javax.ws.rs.Application</param-name>
-			<param-value>gamelive.api.GameLiveApplication</param-value>
-		</init-param>
-	</servlet>		
-	<servlet-mapping>
-		<servlet-name>Resteasy</servlet-name>
-		<url-pattern>/api/*</url-pattern>
-	</servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GiantBombGameController</display-name>
+    <servlet-name>GiantBombGameController</servlet-name>
+    <servlet-class>gamelive.controller.giantbomb.GiantBombGameController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GiantBombGameController</servlet-name>
+    <url-pattern>/GiantBombGameController</url-pattern>
+  </servlet-mapping>
 </web-app>
