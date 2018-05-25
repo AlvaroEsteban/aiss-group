@@ -10,19 +10,15 @@
 <body>
 	
 	<fieldset id = "giantGames">
-		ay lmao
 		<c:forEach items="${requestScope.games}" var="game">
 			<span> Nombre del videojuego: <c:out value="${game.name}"/> </span><br/>
 			<span> GUID del videjuego:  <c:out value="${game.guid}"/> </span><br/>
-			<span> Descripción del videojuego:  </span>
-			<input type="hidden" value="${game.apiDetailUrl}" id="enlace"/>
-			<a href="">Pincha aquí huevo</a>
-			
-			Mío
+			<span> Descripción del videojuego:<c:out value="${game.deck}"/>  </span>
+			<input type="hidden" value="${game.apiDetailUrl}" id="enlace"/>			
 			<form action = "GiantBombGameController" method = "get">
 				<input type = "hidden" value = "${game.guid}" name="guid">
+				<input type = "submit" value = "Enlace del videojuego">
 			</form>
-			<a href="http://localhost:8090/gameView.jsp">Enlace del videojuego</a>
 			</div>
 			<br/>
 		</c:forEach>

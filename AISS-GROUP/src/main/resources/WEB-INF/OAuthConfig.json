@@ -2,8 +2,8 @@
 	"Twitch":{ 
 		"tokenUrl":"https://id.twitch.tv/oauth2/token",
 		"clientId":"pbfpd1osbjx3ytibh3gloui8f5lnhd",
-		"clientSecret":"rs9s90ka6utt8k2e5xh3dlyxolpn92" ,
+		"clientSecret":"qwfjaa3aia7g8vb6fsztjdury06eos" ,
 		"authorizationFormUrl":"https://id.twitch.tv/oauth2/authorize",
-		"scopes":["user_follows_edit", "user_subscription"]
+		"scopes":["user_follows_edit", "user_subscriptions", "user_read"]
 	}
 }		
