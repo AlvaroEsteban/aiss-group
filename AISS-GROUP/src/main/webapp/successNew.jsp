@@ -6,26 +6,36 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Noticias de IGN</title>
+<link rel="stylesheet" type="text/css" href="css/cssgl.css" />
 </head>
 <body>
+
+	<header id="cab">
+	<div class="titulo">
+
+		<h1 class="titulo">gameLive</h1>
+
+	</div>
+
+	</header>
 	
+	<br/>
 	<fieldset id="ign">
-	<legend>Búsqueda de noticias recientes</legend>
+	<legend id = "segtitulo">Búsqueda de noticias recientes</legend>
+	<div id="parrafo">
 	<c:forEach items="${requestScope.articles}" var="article">
-		<span> Nombre del videojuego: <c:out value="${article.title }"/> </span><br/>
-		<span> Fuente de la noticia:  <c:out value="${article.source}"/> </span><br/>
-		<span> Descripción de la noticia:  <c:out value="${article.description}"/> </span><br/>
-		<span> URL de la noticia:  <c:out value="${article.url}"/> </span><br/>
-		<span> Publicado en:  <c:out value="${article.publishedAt}"/> </span><br/>
-		<span> Autor de la noticia:  <c:out value="${article.author}"/> </span><br/>
+		<span id="atributo"> Noticia:</span> <c:out value="${article.title }"/> <br/>
+		<span id="atributo"> Descripción:</span>  <c:out value="${article.description}"/> <br/>
+		<a href=<c:out value="${article.url}"/>> Noticia completa</a> <br/>
+		<span id="atributo"> Fuente de la noticia:</span>  <c:out value="${article.source}"/> <br/>
+		<span id="atributo"> Publicado en:</span> <c:out value="${article.publishedAt}"/> <br/>
+		<span id="atributo"> Autor de la noticia:</span> <c:out value="${article.author}"/> <br/>
 		<br/>
 	</c:forEach>
-	
+	</div>
 	</fieldset>
 	
-	<div>
-	Artículos: ${requestScope.articles}	
-	</div>
+	
 
 </body>
 </html>

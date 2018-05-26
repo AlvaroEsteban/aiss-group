@@ -15,12 +15,42 @@ body {
 	font-size: 25px;
 }
 
+table {
+	text-align: center;
+	width: 80%;
+}
+
+#segtitulo {
+	font-family: 'Bungee Inline';
+	font-size: 25px;
+}
+
+#atributo {
+	
+	text-decoration-line: underline;
+	font-family: Arial;
+	
+}
+
 h2{
 	font-family: 'Bungee Inline';
 }
 
+h3 {
+	font-family: 'Bungee Inline';
+	
+}
+
 p{
 	font-family: Arial;
+	
+}
+
+#parrafo {
+	font-family: Arial;
+}
+#creditos {
+	text-align: center;
 }
 
 @font-face {
