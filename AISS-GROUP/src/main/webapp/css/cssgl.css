@@ -27,13 +27,14 @@ table {
 
 #segtitulo {
 	font-family: 'Bungee Inline';
-	font-size: 25px;
+	font-size: 35px;
 }
 
 #atributo {
 	
 	text-decoration-line: underline;
-	font-family: Arial;
+	font-family: 'Bungee Inline';
+	font-size: 14px;
 	
 }
 
@@ -46,6 +47,19 @@ h3 {
 	
 }
 
+h4 {
+	font-family: 'Bungee Inline';
+}
+
+h6 {
+	font-family: 'Bungee Inline';
+}
+
+h1 {
+	font-family: 'Bungee Inline';
+}
+
+
 p{
 	font-family: Arial;
 	
@@ -53,6 +67,11 @@ p{
 
 #parrafo {
 	font-family: Arial;
+}
+
+#parrafo2 {
+	font-family: Arial;
+	
 }
 #creditos {
 	text-align: center;

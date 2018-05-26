@@ -24,10 +24,9 @@
 	<legend id="segtitulo"> <c:out value="${requestScope.result.name}"/></legend>
 	<div id="parrafo">
 			<span id="atributo"> Nombre completo del videojuego:</span> <c:out value="${requestScope.result.name}"/> <br>
-			<span id="atributo"> GUID del videjuego:</span>  <c:out value="${requestScope.result.guid}"/> <br>
-			<span id="atributo"> Descripción del videojuego:</span> <c:out value="${requestScope.result.deck}"/>   </br>
+			<span id="atributo"> Descripción breve:</span> <c:out value="${requestScope.result.deck}"/>   </br>
 			<span id="atributo"> Id:</span> <c:out value="${requestScope.result.id}" />
-		
+			<div> ${requestScope.result.description} </div>
 	</fieldset>
 	
 	</div>
