@@ -1,51 +1,121 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <title>GAME-LIVE</title>
-  </head>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>GAME-LIVE</title>
+<link rel="stylesheet" type="text/css" href="css/cssgl.css" />
 
-  <body>
-    <h1>GAME-LIVE</h1>
+</head>
+
+<body>
 	
-	<h2>Integrantes del equipo:</h2>
-	<p>José Manuel Muñiz Peña</p>
-	<p>Antonio Picón Mora</p>
-	<p>Álvaro Esteban Castrillo</p>
-    
-    <br/>
-    <h2>Descripción:</h2>
-    <p>El mashup planteado presenta una interfaz sencilla en la que no es necesaria apenas la navegación. De este modo,<br/>
-     se reduce el tiempo que tardaban los usuarios en acceder a los distintos servicios. Además de una sección de actualidad, <br/>
-     en la portada de la aplicación web se podrán ver los streamings de los videojuegos que más se están viendo online en ese <br/>
-     momento e información sobre un juego elegido al azar, para profundizar de este modo en la cultura de los videojuegos de los usuarios.<br/>
-      Además, se implementará un buscador para que se pueda obtener toda la información relacionada con un videojuego particular.
-    </p>
-    
-    <table> 
-       <tr> 
-         <td colspan="2" style="font-weight:bold;">Available Servlets:</td>         
-       </tr> 
-       <tr> 
-         <td><a href="newsearch">Servlet 111111: IGN</a> 
-         <td><a href="games">Servlet 2: GiantBomb</a>
-       </tr> 
-     </table> 
-     <h1>Buscador twitch: </h1>
-     <div id="searchDiv">
-		<form action = "TwitchSearchController" method = "get">
-			<input type="text" name = "query"/><br>
-			<input type = "submit" value ="search" title ="search">
+	<header id="cab">
+	<div class="titulo">
+
+		<h1 class="titulo">gameLive</h1>
+
+	</div>
+
+	</header>
+
+	<br />
+	<h2>Descripción:</h2>
+	<p id=parrafo>
+		El mashup planteado presenta una interfaz sencilla en la que no es
+		necesaria apenas la navegación. De este modo,<br /> se reduce el
+		tiempo que tardaban los usuarios en acceder a los distintos servicios.
+		Además de una sección de actualidad, <br /> en la portada de la
+		aplicación web se podrán ver los streamings de los videojuegos que más
+		se están viendo online en ese <br /> momento e información sobre un
+		juego elegido al azar, para profundizar de este modo en la cultura de
+		los videojuegos de los usuarios.<br /> Además, se implementará un
+		buscador para que se pueda obtener toda la información relacionada con
+		un videojuego particular.
+	</p>
+
+	<table>
+
+
+	<h2>Servicios:</h2>
+		<tr>
+
+
+
+
+			<td></td>
+
+			<td></td>
+				
+			<td>Busca tus streamings favoritos:</td>
+			
+			<td>Busca en nuestra base de datos de videojuegos:</td>
+
+		</tr>
+
+
+		<tr>
+			<td><form action="newsearch">
+     
+     			<input type="submit" value="Últimas noticias">
+     	
+    			</form></td>
+
+			<td><form action="games">
+
+					<input type="submit" value="Muchos juegos">
+
+				</form></td>
+
+
+			<td>
+
+				<div id="searchDiv">
+					<form action="TwitchSearchController" method="get">
+						<input type="text" name="query" /> <input type="submit"
+							value="search" title="search">
+					</form>
+				</div>
+			</td>
+			
+			<td>
+				
+				<div id="searchVid">
+		<form action="searchGame" method="get">
+			<input type="text" name="name" /> <input type="submit" value="search"
+				title="search">
+		</form>
+
+	</div>
+			
+			</td>
+		</tr>
+	</table>
+
+<!-- 
+	<h1>Buscador twitch:</h1>
+	<div id="searchDiv">
+		<form action="TwitchSearchController" method="get">
+			<input type="text" name="query" /><br> <input type="submit"
+				value="search" title="search">
 		</form>
 	</div>
-	
-	<h1>Buscador de videojuegos: </h1>
+
+	<h1>Buscador de videojuegos:</h1>
 	<div id="searchVid">
-		<form action = "searchGame" method = "get">
-			<input type = "text" name = "name"/>
-			<input type = "submit" value = "search" title = "search">
+		<form action="searchGame" method="get">
+			<input type="text" name="name" /> <input type="submit" value="search"
+				title="search">
 		</form>
-	
+
 	</div>
-  </body>
+	<br />
+ -->
+	<div id=creditos>
+		<h3>Integrantes del equipo:</h3>
+		José Manuel Muñiz Peña <br /> Antonio Picón Mora <br /> Álvaro Esteban
+		Castrillo
+	</div>
+
+
+</body>
 </html>

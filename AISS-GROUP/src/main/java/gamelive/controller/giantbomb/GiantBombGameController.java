@@ -10,8 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import gamelive.model.giantbomb.Games;
-import gamelive.model.resources.GiantbombResource;
+import gamelive.model.giantbomb.Game;
+import gamelive.model.giantbomb.GameResult;
+import gamelive.model.resources.GiantBombGameResource;
 
 /**
  * Servlet implementation class GiantBombGameController
@@ -35,14 +36,15 @@ public class GiantBombGameController extends HttpServlet {
 		RequestDispatcher rd = null;
 		
 		log.log(Level.FINE, "Buscando tu juego en GiantBomb");
-		GiantbombResource  gbr = new GiantbombResource();
-		Games games = gbr.getGames();
+		GiantBombGameResource  gbr = new GiantBombGameResource();
+		Game game = gbr.getResult(request.getParameter("guid"));
+		GameResult result = game.getResults();
 		
 		
-		
-		if(games!= null) {
-			rd = request.getRequestDispatcher("/allGames.jsp");
-			request.setAttribute("games", games.getResults() );
+		if(result!= null) {
+			rd = request.getRequestDispatcher("/gameView.jsp");
+			request.setAttribute("result", result);
+			request.setAttribute("name", result.getName());
 		} else {
 			log.log(Level.SEVERE, "Giantbomb no devolvió ningún resultado");
 			rd = request.getRequestDispatcher("/error.jsp");

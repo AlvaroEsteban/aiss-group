@@ -17,14 +17,12 @@
 	
 	
 	<fieldset id = "giantGames">
-
 		<legend id="segtitulo">Resultados de tu búsqueda</legend>
 		<div id="parrafo">
 		<c:forEach items="${requestScope.games}" var="game">
 			<span id="atributo"> Nombre del videojuego:</span> <c:out value="${game.name}"/> <br/>
 			<span id="atributo"> Identificador:</span>  <c:out value="${game.guid}"/> <br/>
-			
-			<span id="atributo"> Descripción del videojuego:</span>  <c:out value="${game.deck}"/>  
+
 			<input type="hidden" value="${game.apiDetailUrl}" id="enlace"/>
 			<div>${game.description}</div>
 			<form action = "GiantBombGameController" method = "get">
