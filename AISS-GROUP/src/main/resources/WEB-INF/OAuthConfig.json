@@ -1,6 +1,6 @@
 		{	
 	"Twitch":{ 
-		"tokenUrl":"https://id.twitch.tv/kraken/oauth2/token",
+		"tokenUrl":"https://id.twitch.tv/oauth2/token",
 		"clientId":"3khv89p7sth4a9esdyeldf2w4txlu9",
 		"clientSecret":"lguw59h1yh4iak1y6iabo90qa5j9s0" ,
 		"authorizationFormUrl":"https://id.twitch.tv/oauth2/authorize",

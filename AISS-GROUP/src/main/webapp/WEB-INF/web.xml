@@ -86,7 +86,7 @@
     </init-param>
     <init-param>
       <param-name>onSuccess</param-name>
-      <param-value>redirect/followList</param-value>
+      <param-value>redirect:/followList</param-value>
     </init-param>
   </servlet>
   <servlet-mapping>
