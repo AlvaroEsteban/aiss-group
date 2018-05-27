@@ -20,18 +20,18 @@ import javax.ws.rs.core.Response.ResponseBuilder;
 import org.jboss.resteasy.spi.BadRequestException;
 import org.jboss.resteasy.spi.NotFoundException;
 
-import gamelive.model.repository.GameSubscribeListRepository;
-import gamelive.model.repository.MapGameSubscribeListRepository;
+import gamelive.model.repository.GameLiveRepository;
+import gamelive.model.repository.GameLiveRepositoryImpl;
 
 
 
 public class SubscribeListResource {
 
 	private static SubscribeListResource _instance=null;
-	GameSubscribeListRepository repository;
+	GameLiveRepository repository;
 	
 	private SubscribeListResource() {
-		repository=MapGameSubscribeListRepository.getInstance();
+		repository=GameLiveRepositoryImpl.getInstance();
 	}
 	
 	public static SubscribeListResource getInstance()
