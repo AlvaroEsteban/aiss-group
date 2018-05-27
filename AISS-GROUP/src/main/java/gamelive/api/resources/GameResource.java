@@ -20,8 +20,8 @@ import javax.ws.rs.core.Response.ResponseBuilder;
 import org.jboss.resteasy.spi.BadRequestException;
 
 import gamelive.api.model.Game;
-import gamelive.model.repository.GameSubscribeListRepository;
-import gamelive.model.repository.MapGameSubscribeListRepository;
+import gamelive.model.repository.GameLiveRepository;
+import gamelive.model.repository.GameLiveRepositoryImpl;
 import gamelive.utility.Utils;
 import javassist.NotFoundException;
 
@@ -29,10 +29,10 @@ import javassist.NotFoundException;
 public class GameResource {
 
 	public static GameResource _instance=null;
-	GameSubscribeListRepository repository;
+	GameLiveRepository repository;
 	
 	private GameResource(){
-		repository= MapGameSubscribeListRepository.getInstance();
+		repository= GameLiveRepositoryImpl.getInstance();
 	}
 	
 	public static GameResource getInstance()

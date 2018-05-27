@@ -6,17 +6,17 @@ import java.util.Map;
 import gamelive.api.model.Game;
 import gamelive.api.model.GameSubscribeList;
 
-public class MapGameSubscribeListRepository implements GameSubscribeListRepository{
+public class GameLiveRepositoryImpl implements GameLiveRepository{
 	Map<String, GameSubscribeList> playlistMap;
 	Map<String, Game> songMap;
-	private static MapGameSubscribeListRepository instance=null;
+	private static GameLiveRepositoryImpl instance=null;
 	private int index=0;			// Index to create playlists and songs' identifiers.
 	
 	
-	public static MapGameSubscribeListRepository getInstance() {
+	public static GameLiveRepositoryImpl getInstance() {
 		
 		if (instance==null) {
-			instance = new MapGameSubscribeListRepository();
+			instance = new GameLiveRepositoryImpl();
 			instance.init();
 		}
 		

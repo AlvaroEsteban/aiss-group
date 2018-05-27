@@ -10,9 +10,7 @@ public class GameLiveApplication extends Application {
 	private Set<Class<?>> classes = new HashSet<Class<?>>();
 	
 	public GameLiveApplication() {
-//
-//		singletons.add();
-//		singletons.add();
+
 	}
 	
 	@Override

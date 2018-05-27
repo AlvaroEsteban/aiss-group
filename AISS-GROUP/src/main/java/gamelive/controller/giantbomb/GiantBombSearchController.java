@@ -32,6 +32,8 @@ public class GiantBombSearchController extends HttpServlet{
 		
 		RequestDispatcher rd = null;
 		
+		String busqueda = request.getParameter("name");
+		
 		log.log(Level.FINE, "Buscando juegos en GiantBomb");
 		GiantBombSearchResource  gbr = new GiantBombSearchResource();
 		Games games = gbr.getGamesByName(request.getParameter("name"));
@@ -42,6 +44,7 @@ public class GiantBombSearchController extends HttpServlet{
 			rd = request.getRequestDispatcher("/searchVideogameView.jsp");
 			log.log(Level.FINE, "Juego 1: "+games.getResults().get(0).getName());
 			request.setAttribute("games", games.getResults() );
+			request.setAttribute("busqueda", busqueda);
 		} else {
 			log.log(Level.SEVERE, "Giantbomb no devolvió ningún resultado");
 			rd = request.getRequestDispatcher("/error.jsp");

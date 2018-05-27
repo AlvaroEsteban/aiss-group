@@ -5,19 +5,31 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="css/cssgl.css" />
+<title>Videojuego</title>
 </head>
 <body>
+	<header id="cab">
+	<div class="titulo">
+
+		<h1 class="titulo">gameLive</h1>
+
+	</div>
+
+	</header>
+	<br/>
+	<br/>
 	
 	<fieldset id = "giantGame">
-			<span> Nombre del videojuego: <c:out value="${requestScope.result.name}"/> </span><br>
-			<span> GUID del videjuego:  <c:out value="${requestScope.result.guid}"/> </span><br>
-			<span> Descripción del videojuego:<c:out value="${requestScope.result.deck}"/>  </span>
-			<br>
-		
+	<legend id="segtitulo"> <c:out value="${requestScope.result.name}"/></legend>
+	<div id="parrafo">
+			<span id="atributo"> Nombre completo del videojuego:</span> <c:out value="${requestScope.result.name}"/> <br>
+			<span id="atributo"> Descripción breve:</span> <c:out value="${requestScope.result.deck}"/>   </br>
+			<span id="atributo"> Id:</span> <c:out value="${requestScope.result.id}" />
+			<div> ${requestScope.result.description} </div>
 	</fieldset>
 	
-	
+	</div>
 	
 </body>
 </html>
