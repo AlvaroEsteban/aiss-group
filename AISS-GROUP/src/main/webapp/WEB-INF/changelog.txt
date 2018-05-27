@@ -1,0 +1,11 @@
+VERSION: 2.0.0
+DESCRIPCION:	
+	Se realizan los trabajos de integración de todas las apis y se procede con la entrega de la versión preliminar.
+	
+VERSION: 1.1.0
+DESCRIPCION:	
+	Se realizan los trabajos de desarrollo, corrección de errores y generación de diagramas.
+	
+VERSION: 1.0.0
+DESCRIPCION:	
+	Se realizan los trabajos de documentación previa al desarrollo.
