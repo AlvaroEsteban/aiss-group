@@ -1,0 +1,361 @@
+---
+swagger: "2.0"
+info:
+  description: |
+    Esta es la api de GameLive
+  version: 1.0.0
+  title: GameLive API
+  contact:
+    email: alvaroestebancastrillo@gmail.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+host: virtserver.swaggerhub.com
+basePath: /AlvaroEsteban/GameLiveAPI/1.0.0
+tags:
+- name: Game
+  description: Todo acerca de los juegos
+  externalDocs:
+    description: Find out more
+    url: http://swagger.io
+- name: SubscribeList
+  description: Lista de juegos subscrito
+- name: Noticia
+  description: Noticias sobre los videojuegos
+schemes:
+- https
+- http
+paths:
+  /games:
+    get:
+      tags:
+      - Game
+      summary: Devuelve todos los videojuegos
+      operationId: getAll
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: Operacion realizada con exito
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Game'
+        400:
+          description: Invalid status value
+    post:
+      tags:
+      - Game
+      summary: Añade un nuevo juego
+      operationId: addGame
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: game
+        required: true
+        schema:
+          $ref: '#/definitions/Game'
+      responses:
+        200:
+          description: Operacion realizada con exito.
+    put:
+      tags:
+      - Game
+      summary: Actualiza un videojuego
+      operationId: updateGame
+      consumes:
+      - application/json
+      parameters:
+      - in: body
+        name: game
+        required: true
+        schema:
+          $ref: '#/definitions/Game'
+      responses:
+        200:
+          description: Operacion realizada con exito.
+  /games/{id}:
+    get:
+      tags:
+      - Game
+      summary: Finds Pets by tags
+      operationId: get
+      produces:
+      - application/json
+      parameters:
+      - name: id
+        in: path
+        description: Id del videojuego
+        required: true
+        type: string
+      responses:
+        200:
+          description: Operacion realizada con exito
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Game'
+        400:
+          description: Invalid tag value
+    delete:
+      tags:
+      - game
+      summary: Elimina un videojuego
+      operationId: removeGame
+      parameters:
+      - name: id
+        in: path
+        description: Identificador del videojuego
+        required: true
+        type: string
+      responses:
+        200:
+          description: Operacion realizada con exito
+        400:
+          description: Identificador invalido
+  /noticias:
+    post:
+      tags:
+      - noticia
+      summary: Devuelve las noticias de un videojuego
+      operationId: addNoticia
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: entrada
+        description: task object
+        required: true
+        schema:
+          $ref: '#/definitions/entrada'
+      responses:
+        200:
+          description: Operación realizada con exito
+    put:
+      tags:
+      - noticia
+      summary: Actualiza una noticia
+      operationId: updateNoticia
+      consumes:
+      - application/json
+      parameters:
+      - in: body
+        name: entrada
+        description: task object
+        required: true
+        schema:
+          $ref: '#/definitions/entrada'
+      responses:
+        200:
+          description: Operación realizada con exito
+  /noticias/{id}:
+    get:
+      tags:
+      - noticia
+      summary: Devuelve todas las noticias de un videojuego
+      operationId: getAllNoticias
+      produces:
+      - application/json
+      parameters:
+      - name: id
+        in: path
+        description: Id del videojuego
+        required: true
+        type: string
+      responses:
+        200:
+          description: Operacion realizada con exito
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Noticia'
+        400:
+          description: Invalid status value
+  /noticias/{id}/{idNoticia}:
+    delete:
+      tags:
+      - noticia
+      summary: Elimina una noticia de un videojuego
+      operationId: removeNoticia
+      parameters:
+      - name: id
+        in: path
+        description: Id del videojuego
+        required: true
+        type: string
+      - name: idNoticia
+        in: path
+        description: Id de la noticia
+        required: true
+        type: string
+      responses:
+        200:
+          description: La operacion se realizo con exito
+        404:
+          description: Error al buscar la noticia
+  /subscribeList:
+    get:
+      tags:
+      - GameSubscribeList
+      summary: Devuelve la lista completa de todas las subscripciones
+      operationId: getAllGameSubscribeLists
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        200:
+          description: Operacion realizada con exito
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/GameSubscribeList'
+        400:
+          description: Invalid status value
+  /subscribeList/{subscribeListId}/{gameId}:
+    post:
+      tags:
+      - GameSubscribeList
+      summary: Devuelve la lista completa de todas las subscripciones
+      operationId: addGameToSubscribelist
+      consumes:
+      - text/plain
+      produces:
+      - application/json
+      parameters:
+      - name: subscribeListId
+        in: path
+        description: Id de la lista de subscripcion
+        required: true
+        type: string
+      - name: gameId
+        in: path
+        description: Id del videojuego
+        required: true
+        type: string
+      responses:
+        200:
+          description: Operacion realizada con exito
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/GameSubscribeList'
+        400:
+          description: Invalid status value
+definitions:
+  Game:
+    type: object
+    properties:
+      id:
+        type: string
+      titulo:
+        type: string
+      compania:
+        type: string
+      plataforma:
+        type: string
+      idioma:
+        type: string
+        description: Idioma del juego
+      noticias:
+        type: array
+        items:
+          $ref: '#/definitions/Noticia'
+    example:
+      noticias:
+      - contenido: contenido
+        titulo: titulo
+        id: id
+        url: url
+      - contenido: contenido
+        titulo: titulo
+        id: id
+        url: url
+      compania: compania
+      plataforma: plataforma
+      titulo: titulo
+      idioma: idioma
+      id: id
+  GameSubscribeList:
+    type: object
+    properties:
+      id:
+        type: string
+      games:
+        type: array
+        items:
+          $ref: '#/definitions/Game'
+      nombre:
+        type: string
+      plataforma:
+        type: string
+      descripcion:
+        type: string
+    example:
+      descripcion: descripcion
+      plataforma: plataforma
+      games:
+      - noticias:
+        - contenido: contenido
+          titulo: titulo
+          id: id
+          url: url
+        - contenido: contenido
+          titulo: titulo
+          id: id
+          url: url
+        compania: compania
+        plataforma: plataforma
+        titulo: titulo
+        idioma: idioma
+        id: id
+      - noticias:
+        - contenido: contenido
+          titulo: titulo
+          id: id
+          url: url
+        - contenido: contenido
+          titulo: titulo
+          id: id
+          url: url
+        compania: compania
+        plataforma: plataforma
+        titulo: titulo
+        idioma: idioma
+        id: id
+      id: id
+      nombre: nombre
+  Noticia:
+    type: object
+    properties:
+      id:
+        type: string
+      url:
+        type: string
+      titulo:
+        type: string
+      contenido:
+        type: string
+    example:
+      contenido: contenido
+      titulo: titulo
+      id: id
+      url: url
+  entrada:
+    properties:
+      gid:
+        type: string
+        description: id del videojuego
+      noticia:
+        type: array
+        items:
+          $ref: '#/definitions/Noticia'
+    description: entrada
+externalDocs:
+  description: Find out more about Swagger
+  url: http://gamelive-aiss.appspot.com/

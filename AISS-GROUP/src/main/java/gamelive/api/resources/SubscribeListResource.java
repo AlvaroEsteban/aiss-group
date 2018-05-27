@@ -2,6 +2,7 @@ package gamelive.api.resources;
 
 import java.net.URI;
 import java.util.Collection;
+import java.util.List;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -20,11 +21,13 @@ import javax.ws.rs.core.Response.ResponseBuilder;
 import org.jboss.resteasy.spi.BadRequestException;
 import org.jboss.resteasy.spi.NotFoundException;
 
+import gamelive.api.model.Game;
+import gamelive.api.model.GameSubscribeList;
 import gamelive.model.repository.GameLiveRepository;
 import gamelive.model.repository.GameLiveRepositoryImpl;
 
 
-
+@Path("/subscribeList")
 public class SubscribeListResource {
 
 	private static SubscribeListResource _instance=null;
@@ -41,133 +44,45 @@ public class SubscribeListResource {
 		return _instance;
 	}
 	
-	/*
-	 * 
-	 *
-	@GET
-	@Produces("application/json")
-	public Collection<Playlist> getAll()
-	{
-		return repository.getAllPlaylists();
-	}
-	
 	
 	@GET
-	@Path("/{id}")
 	@Produces("application/json")
-	public Playlist get(@PathParam("id") String id)
+	public Collection<GameSubscribeList> getAllGameSubscribeLists()
 	{
-		Playlist list = repository.getPlaylist(id);
-		
-		if (list == null) {
-			throw new NotFoundException("The playlist wit id="+ id +" was not found");			
-		}
-		
-		return list;
+		return repository.getAllGameSubscribeList();
 	}
-	
-	@POST
-	@Consumes("application/json")
-	@Produces("application/json")
-	public Response addPlaylist(@Context UriInfo uriInfo, Playlist playlist) {
-		if (playlist.getName() == null || "".equals(playlist.getName()))
-			throw new BadRequestException("The name of the playlist must not be null");
-		
-		if (playlist.getSongs()!=null)
-			throw new BadRequestException("The songs property is not editable.");
-
-		repository.addPlaylist(playlist);
-
-		// Builds the response. Returns the playlist the has just been added.
-		UriBuilder ub = uriInfo.getAbsolutePathBuilder().path(this.getClass(), "get");
-		URI uri = ub.build(playlist.getId());
-		ResponseBuilder resp = Response.created(uri);
-		resp.entity(playlist);			
-		return resp.build();
-	}
-
-	
-	@PUT
-	@Consumes("application/json")
-	public Response updatePlaylist(Playlist playlist) {
-		Playlist oldplaylist = repository.getPlaylist(playlist.getId());
-		if (oldplaylist == null) {
-			throw new NotFoundException("The playlist with id="+ playlist.getId() +" was not found");			
-		}
-		
-		if (playlist.getSongs()!=null)
-			throw new BadRequestException("The songs property is not editable.");
-		
-		// Update name
-		if (playlist.getName()!=null)
-			oldplaylist.setName(playlist.getName());
-		
-		// Update description
-		if (playlist.getDescription()!=null)
-			oldplaylist.setDescription(playlist.getDescription());
-		
-		return Response.noContent().build();
-	}
-	
-	@DELETE
-	@Path("/{id}")
-	public Response removePlaylist(@PathParam("id") String id) {
-		Playlist toberemoved=repository.getPlaylist(id);
-		if (toberemoved == null)
-			throw new NotFoundException("The playlist with id="+ id +" was not found");
-		else
-			repository.deletePlaylist(id);
-		
-		return Response.noContent().build();
-	}
-	
 	
 	@POST	
-	@Path("/{playlistId}/{songId}")
+	@Path("/{subscribeListId}/{gameId}")
 	@Consumes("text/plain")
 	@Produces("application/json")
-	public Response addSong(@Context UriInfo uriInfo,@PathParam("playlistId") String playlistId, @PathParam("songId") String songId)
-	{				
+	public Response addGameToSubscribelist(@Context UriInfo uriInfo,@PathParam("subscribeListId") String subscribeListId, 
+			@PathParam("gameId") String gameId){				
 		
-		Playlist playlist = repository.getPlaylist(playlistId);
-		Song song = repository.getSong(songId);
+		GameSubscribeList gsl = repository.getGameSubscribeList(subscribeListId);	
+		if (gsl == null)
+			throw new NotFoundException("La lista no se ha encontrado");
 		
-		if (playlist==null)
-			throw new NotFoundException("The playlist with id=" + playlistId + " was not found");
+		List<Game> games = (List<Game>) repository.getAllGames();
+		Game juegoAdd = null;
+		for (Game game : games) {
+			if(game.getId().equals(gameId)){
+				juegoAdd = game;
+			}
+		}
+
+		if (juegoAdd==null)
+			throw new NotFoundException("El juego no se ha encontrado");
 		
-		if (song == null)
-			throw new NotFoundException("The song with id=" + songId + " was not found");
-		
-		if (playlist.getSong(songId)!=null)
-			throw new BadRequestException("The song is already included in the playlist.");
 			
-		repository.addSong(playlistId, songId);		
+		repository.getGameSubscribeList(subscribeListId).getGames().add(juegoAdd);
 
 		// Builds the response
 		UriBuilder ub = uriInfo.getAbsolutePathBuilder().path(this.getClass(), "get");
-		URI uri = ub.build(playlistId);
+		URI uri = ub.build(gsl);
 		ResponseBuilder resp = Response.created(uri);
-		resp.entity(playlist);			
+		resp.entity(gsl);			
 		return resp.build();
 	}
 	
-	
-	@DELETE
-	@Path("/{playlistId}/{songId}")
-	public Response removeSong(@PathParam("playlistId") String playlistId, @PathParam("songId") String songId) {
-		Playlist playlist = repository.getPlaylist(playlistId);
-		Song song = repository.getSong(songId);
-		
-		if (playlist==null)
-			throw new NotFoundException("The playlist with id=" + playlistId + " was not found");
-		
-		if (song == null)
-			throw new NotFoundException("The song with id=" + songId + " was not found");
-		
-		
-		repository.removeSong(playlistId, songId);		
-		
-		return Response.noContent().build();
-	}
-	 */
 }

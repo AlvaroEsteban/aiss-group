@@ -43,12 +43,10 @@ public class NoticiaResource {
 		return _instance; 
 	}
 
-//	public void updateNoticiaFromGame(String gameId, Noticia n);
-	
 	@GET
 	@Produces("application/json")
 	@Path("/{id}")
-	public Collection<Noticia> getAll(@PathParam("id") String gameId){
+	public Collection<Noticia> getAllNoticias(@PathParam("id") String gameId){
 		return repository.getAllNoticiaFromGame(gameId);
 	}
 	
