@@ -9,14 +9,13 @@ public class Noticia {
 	
 	public Noticia() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
-	public Noticia(String id, String url, String title, String contenido) {
+	public Noticia(String id, String url, String titulo, String contenido) {
 		super();
 		this.id = id;
 		this.url = url;
-		this.titulo = title;
+		this.titulo = titulo;
 		this.contenido = contenido;
 	}
 	
@@ -32,11 +31,11 @@ public class Noticia {
 	public void setUrl(String url) {
 		this.url = url;
 	}
-	public String getTitle() {
+	public String getTitulo() {
 		return titulo;
 	}
-	public void setTitle(String title) {
-		this.titulo = title;
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
 	}
 	public String getContenido() {
 		return contenido;

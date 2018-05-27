@@ -63,7 +63,7 @@ public class GameResource {
 		if(g == null){
 			throw new NotFoundException("The game with id="+ gameId +" was not found"); 
 		}
-		return null;
+		return g;
 	}
 	
 	@POST
@@ -92,14 +92,13 @@ public class GameResource {
 			throw new NotFoundException("El juego con id="+game.getId() + " no se ha encontrado.");
 		}
 		
-		if(!Utils.isBlank(game.getTitulo()))
-			repoGame.setTitulo(game.getTitulo());
-		if(!Utils.isBlank(game.getCompania()))
-			repoGame.setCompania(game.getCompania());
-		if(!Utils.isBlank(game.getIdioma()))
-			repoGame.setIdioma(game.getIdioma());
-		if(!Utils.isBlank(game.getPlataforma()))
-			repoGame.setPlataforma(game.getPlataforma());
+		if(!Utils.isBlank(game.getTitulo()) && !Utils.isBlank(game.getCompania()) && !Utils.isBlank(game.getIdioma())
+			&& !Utils.isBlank(game.getPlataforma())){
+			repository.updateGame(game);
+		}else{
+			throw new BadRequestException("Algunos de los valores del juego no están rellenos.");
+		}
+			
 		return Response.noContent().build();
 	}
 	

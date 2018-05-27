@@ -24,12 +24,12 @@
 		<legend id = "segtitulo">Búsqueda de noticias recientes</legend>
 		<div id="parrafo">
 		<c:forEach items="${requestScope.articles}" var="article">
-			<span id="atributo"> Noticia:</span> <c:out value="${article.title }"/> <br/>
-			<span id="atributo"> Descripción:</span>  <c:out value="${article.description}"/> <br/>
+			<span class="atributo"> Noticia:</span> <c:out value="${article.title }"/> <br/>
+			<span class="atributo"> Descripción:</span>  <c:out value="${article.description}"/> <br/>
 			<a href=<c:out value="${article.url}"/>> Noticia completa</a> <br/>
-			<span id="atributo"> Fuente de la noticia:</span>  <c:out value="${article.source}"/> <br/>
-			<span id="atributo"> Publicado en:</span> <c:out value="${article.publishedAt}"/> <br/>
-			<span id="atributo"> Autor de la noticia:</span> <c:out value="${article.author}"/> <br/>
+			<span class="atributo"> Fuente de la noticia:</span>  <c:out value="${article.source}"/> <br/>
+			<span class="atributo"> Publicado en:</span> <c:out value="${article.publishedAt}"/> <br/>
+			<span class="atributo"> Autor de la noticia:</span> <c:out value="${article.author}"/> <br/>
 			<br/>
 		</c:forEach>
 	</div>
