@@ -115,5 +115,4 @@
     <servlet-name>GiantBombGameController</servlet-name>
     <url-pattern>/GiantBombGameController</url-pattern>
   </servlet-mapping>
-  
 </web-app>

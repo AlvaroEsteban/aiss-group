@@ -6,6 +6,7 @@ import java.net.URLEncoder;
 import org.restlet.resource.ClientResource;
 import org.restlet.resource.ResourceException;
 
+import gamelive.model.twitch.OAuth2Twitch;
 import gamelive.model.twitch.StreamSearch;
 import gamelive.model.twitch.User;
 
@@ -40,6 +41,8 @@ public class TwitchResource {
 			}
 			return us;
 		}
+		
+	
 		
 		
 	}

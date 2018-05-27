@@ -40,8 +40,9 @@ public class TwitchFollowingController extends HttpServlet {
 			} else {
 				log.info("Probably your token has experied. Redirecting to OAuth servlet...");
 				request.getRequestDispatcher("/AuthController/Twitch");
+				
 			}
-		} else {
+		} else { 
 			log.info("Intentando acceder a Twitch sin autentificación, redirigiendo a OAuth Servlet...");
 			request.getRequestDispatcher("/AuthController/Twitch").forward(request,response);
 		}
