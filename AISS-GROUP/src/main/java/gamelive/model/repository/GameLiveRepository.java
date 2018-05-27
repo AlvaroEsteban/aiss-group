@@ -5,7 +5,7 @@ import java.util.Collection;
 import gamelive.api.model.Game;
 import gamelive.api.model.GameSubscribeList;
 
-public interface GameSubscribeListRepository {
+public interface GameLiveRepository {
 	// Game
 	public void addGame(Game s);
 	public Collection<Game> getAllGames();
