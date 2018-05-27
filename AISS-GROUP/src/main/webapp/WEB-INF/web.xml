@@ -66,32 +66,42 @@
     <url-pattern>/searchGame</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>TwitchAuthController</servlet-name>
+    <description></description>
+    <display-name>YoutubeSearchController</display-name>
+    <servlet-name>YoutubeSearchController</servlet-name>
+    <servlet-class>gamelive.controller.youtube.YoutubeSearchController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>YoutubeSearchController</servlet-name>
+    <url-pattern>/youtubeSearch</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>YoutubeAuthController</servlet-name>
     <servlet-class>gamelive.controller.oauth.GenericAuthController</servlet-class>
     <init-param>
       <param-name>provider</param-name>
-      <param-value>Twitch</param-value>
+      <param-value>Youtube</param-value>
     </init-param>
   </servlet>
   <servlet-mapping>
-    <servlet-name>TwitchAuthController</servlet-name>
-    <url-pattern>/AuthController/Twitch</url-pattern>
+    <servlet-name>YoutubeAuthController</servlet-name>
+    <url-pattern>/AuthController/Youtube</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>TwitchOAuth2Callback</servlet-name>
+    <servlet-name>YoutubeOAuth2Callback</servlet-name>
     <servlet-class>gamelive.controller.oauth.OAuth2Callback</servlet-class>
     <init-param>
       <param-name>provider</param-name>
-      <param-value>Twitch</param-value>
+      <param-value>Youtube</param-value>
     </init-param>
     <init-param>
       <param-name>onSuccess</param-name>
-      <param-value>redirect:/followList</param-value>
+      <param-value>redirect/youtubeSearch</param-value>
     </init-param>
   </servlet>
   <servlet-mapping>
-    <servlet-name>TwitchOAuth2Callback</servlet-name>
-    <url-pattern>/oauth2callback/Twitch</url-pattern>
+    <servlet-name>YoutubeOAuth2Callback</servlet-name>
+    <url-pattern>/oauth2callback/Youtube</url-pattern>
   </servlet-mapping>
   <servlet>
     <servlet-name>Resteasy</servlet-name>
@@ -114,5 +124,15 @@
   <servlet-mapping>
     <servlet-name>GiantBombGameController</servlet-name>
     <url-pattern>/GiantBombGameController</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>YoutubeVideoController</display-name>
+    <servlet-name>YoutubeVideoController</servlet-name>
+    <servlet-class>gamelive.controller.youtube.YoutubeVideoController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>YoutubeVideoController</servlet-name>
+    <url-pattern>/videoController</url-pattern>
   </servlet-mapping>
 </web-app>

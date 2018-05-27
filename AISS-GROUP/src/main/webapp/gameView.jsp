@@ -27,6 +27,10 @@
 			<span id="atributo"> Descripción breve:</span> <c:out value="${requestScope.result.deck}"/>   </br>
 			<span id="atributo"> Id:</span> <c:out value="${requestScope.result.id}" />
 			<div> ${requestScope.result.description} </div>
+			<form action = "/youtubeSearch" method ="get">
+				<input type = "hidden" name = "query" value = "<c:out value="${requestScope.result.name}"/>">
+				<button type="submit" name ="submit" id="submit" value="submit">Vídeos relacionados</button>
+			</form>
 	</fieldset>
 	
 	</div>
